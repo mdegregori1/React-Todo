@@ -45,7 +45,7 @@ class App extends React.Component {
 
   toggleCompleted = id => {
     console.log(id);
-    let todos = this.state.todos.slice(0);
+    let todos = this.state.todos.splice(onclick);
     todos = todos.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
@@ -56,7 +56,6 @@ class App extends React.Component {
     });
     this.setState({ todos });
   };
- 
   clearCompleted = e => {
     e.preventDefault();
     this.setState({
